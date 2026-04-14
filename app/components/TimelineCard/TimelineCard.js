@@ -1,22 +1,24 @@
-import { HiOutlineHandRaised } from "react-icons/hi2";
+import Image from "next/image";
 
-const TimelineCard = () => {
+const TimelineCard = ({ timeline }) => {
   return (
     <div className="w-full rounded-md border border-gray-200 bg-[#f9fafb] px-4 py-3 hover:bg-white transition">
       <div className="flex items-center gap-3">
         {/* Icon */}
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-amber-100 text-amber-600">
-          <HiOutlineHandRaised className="text-lg" />
+        <div className="flex h-8 w-8 items-center justify-center rounded-full text-amber-600">
+          <Image src={timeline.image} height={50} width={50} alt="" />
         </div>
 
         {/* Content */}
         <div className="flex flex-col">
           <p className="text-sm font-semibold text-slate-800">
-            Meetup{" "}
-            <span className="font-normal text-slate-500">with Tom Baker</span>
+            {timeline.call}{" "}
+            <span className="font-normal text-slate-500">
+              with {timeline.name}
+            </span>
           </p>
 
-          <span className="text-xs text-slate-500">March 29, 2026</span>
+          <span className="text-xs text-slate-500">{timeline.date}</span>
         </div>
       </div>
     </div>

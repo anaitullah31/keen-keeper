@@ -1,4 +1,8 @@
+import CheckingButton from "@/app/components/CheckingButton/CheckingButton";
 import Image from "next/image";
+import callImage from "../../assets/call.png";
+import textImage from "../../assets/text.png";
+import videoImage from "../../assets/video.png";
 import {
   LuBell,
   LuArchive,
@@ -139,20 +143,18 @@ const FriendsDetails = async ({ params }) => {
               </h3>
 
               <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                <button className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-[#f8fafc] px-4 py-6 text-slate-700 transition hover:bg-white hover:shadow-sm">
+                <CheckingButton name={name} call="Call" image={callImage}>
                   <LuPhone className="text-2xl" />
                   <span className="mt-2 text-sm font-medium">Call</span>
-                </button>
-
-                <button className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-[#f8fafc] px-4 py-6 text-slate-700 transition hover:bg-white hover:shadow-sm">
+                </CheckingButton>
+                <CheckingButton name={name} call="Text" image={textImage}>
                   <LuMessageSquare className="text-2xl" />
                   <span className="mt-2 text-sm font-medium">Text</span>
-                </button>
-
-                <button className="flex flex-col items-center justify-center rounded-xl border border-gray-200 bg-[#f8fafc] px-4 py-6 text-slate-700 transition hover:bg-white hover:shadow-sm">
+                </CheckingButton>
+                <CheckingButton name={name} call="Video" image={videoImage}>
                   <LuVideo className="text-2xl" />
                   <span className="mt-2 text-sm font-medium">Video</span>
-                </button>
+                </CheckingButton>
               </div>
             </div>
 

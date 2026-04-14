@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
 import { CiClock2 } from "react-icons/ci";
@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
 
   const navLinks = [
     {
@@ -33,7 +34,6 @@ const Header = () => {
   return (
     <header className="w-full border-b border-gray-200 bg-[#f3f3f3]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        
         {/* Logo */}
         <Link href="/" className="text-2xl font-extrabold">
           <span className="text-slate-800">Keen</span>

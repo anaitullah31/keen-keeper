@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Common/Footer";
 import Header from "./components/Common/Header";
+import TimelineContextWrapper from "./context/TimelineContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,9 +21,11 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
-        <Footer />
+        <TimelineContextWrapper>
+          <Header />
+          {children}
+          <Footer />
+        </TimelineContextWrapper>
       </body>
     </html>
   );
