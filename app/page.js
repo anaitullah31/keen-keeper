@@ -1,3 +1,4 @@
+import Friends from "./components/Friends/Friends";
 import Hero from "./components/Hero/Hero";
 
 export const metadata = {
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
+      <Friends />
     </div>
   );
 }
