@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./components/Common/Footer";
 import Header from "./components/Common/Header";
 import TimelineContextWrapper from "./context/TimelineContext";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <TimelineContextWrapper>
+          <ToastContainer />
           <Header />
           {children}
           <Footer />
