@@ -6,6 +6,7 @@ import { Timelinecontext } from "../context/TimelineContext";
 
 const Stats = () => {
   const { timelines } = useContext(Timelinecontext);
+  console.log(timelines);
 
   const colorMap = {
     Text: "#7c3aed",

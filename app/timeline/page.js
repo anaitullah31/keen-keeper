@@ -22,7 +22,6 @@ const Timeline = () => {
               <select className="w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm text-slate-500 outline-none transition focus:border-[#245b4b] focus:ring-2 focus:ring-[#245b4b]/10">
                 <option>Filter timeline</option>
                 <option>All</option>
-                <option>Meetup</option>
                 <option>Call</option>
                 <option>Text</option>
                 <option>Video</option>

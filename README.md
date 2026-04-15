@@ -1,36 +1,187 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 👥 KeenKeeper — Keep Your Friendships Alive
 
-## Getting Started
+<p align="center">
+  A modern friendship management web app built with <b>Next.js (App Router)</b><br/>
+  helping you stay connected with people who matter most ❤️
+</p>
 
-First, run the development server:
+<p align="center">
+  <a href="https://keen-keeper-silk.vercel.app/">
+    <img src="https://img.shields.io/badge/Live-Demo-green?style=for-the-badge" />
+  </a>
+  <a href="https://github.com/anaitullah31/keen-keeper">
+    <img src="https://img.shields.io/badge/GitHub-Repo-black?style=for-the-badge" />
+  </a>
+</p>
+
+---
+
+## 🌐 Live Links
+
+🔗 **Live Site:** https://keen-keeper-silk.vercel.app/  
+🔗 **Repository:** https://github.com/anaitullah31/keen-keeper  
+
+---
+
+## 📖 About The Project
+
+**KeenKeeper** is a responsive and interactive web application designed to help users **track, manage, and maintain meaningful relationships**.
+
+It provides an intuitive interface to:
+- Monitor communication frequency  
+- Track interactions (Call, Text, Video)  
+- Analyze relationship patterns through visual insights  
+
+💡 The goal: *Never lose touch with important people in your life.*
+
+---
+
+## 🚀 Tech Stack
+
+| Technology | Purpose |
+|-----------|--------|
+| **Next.js (App Router)** | Routing |
+| **React.js** | UI components |
+| **Tailwind CSS** | Styling & responsiveness |
+| **Recharts** | Analytics visualization |
+| **React Icons** | Icons |
+| **Context API** | Global state management |
+| **Vercel** | Deployment |
+
+---
+
+## ✨ Core Features
+
+### 🔝 Smart Navbar
+- Fully responsive design  
+- Active route highlighting  
+- Icon-based navigation  
+
+---
+
+### 🎯 Home Page
+- Clean hero/banner section  
+- CTA button (Add Friend)  
+- Summary stats cards  
+- Fully responsive layout  
+
+---
+
+### 👫 Friends Management
+- Dynamic friend cards from JSON  
+- Each card includes:
+  - 📸 Profile Image  
+  - 🧑 Name  
+  - 📅 Last contact time  
+  - 🏷️ Tags  
+  - 🔴 Status (color-coded)  
+- Click → Navigate to details page  
+
+---
+
+### 👤 Friend Details Page
+
+#### 🧾 Left Panel
+- Profile info (image, email, bio, tags)  
+- Status badge  
+- Action buttons:
+  - ⏰ Snooze  
+  - 📦 Archive  
+  - 🗑️ Delete  
+
+#### 📊 Right Panel
+- Stats cards (Days, Goal, Next Due)  
+- Relationship goal section  
+- Quick Check-In actions  
+
+---
+
+### ⚡ Interaction System
+- One-click interaction:
+  - 📞 Call  
+  - 💬 Text  
+  - 🎥 Video  
+- Automatically:
+  - Adds timeline entry  
+  - Uses current date  
+  - Shows toast notification  
+
+---
+
+### 📜 Timeline Page
+- Full interaction history  
+- Includes:
+  - 📅 Date  
+  - 🔣 Icon  
+  - 📝 Title  
+- 🔍 Search by name/type  
+- 🎯 Filter by interaction type  
+
+---
+
+### 📊 Analytics (Stats Page)
+- Beautiful Pie Chart (Recharts)  
+- Displays:
+  - Call  
+  - Text  
+  - Video interaction distribution  
+
+---
+
+## 📱 Responsive Design
+
+✔ Mobile  
+✔ Tablet  
+✔ Desktop  
+
+All layouts are fully responsive using Tailwind CSS grid system.
+
+---
+
+## 🛠️ Additional Features
+
+- ✅ Custom 404 Page  
+- ✅ Loading UI (Skeleton/Spinner)  
+- ✅ Toast notifications  
+- ✅ Production-safe routing (no reload errors)  
+
+---
+
+## 🧠 Advanced Concepts Used
+
+- 🔄 Next.js App Router (Server + Client Components)  
+- 📊 Data transformation using `reduce()`  
+- 🔍 Search & filter logic  
+- 🌐 External image handling (Next/Image config)  
+- ⚡ Context API for global state  
+
+---
+
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+git clone https://github.com/anaitullah31/keen-keeper.git
+cd keen-keeper
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📌 Future Improvements
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 🔃 Sort timeline (newest/oldest)  
+- ⏱️ Debounced search  
+- 🌙 Dark mode  
+- 🔐 Authentication system  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🙌 Author
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👤 **Anaitullah**  
+💼 Frontend Developer | Next.js Enthusiast  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
