@@ -1,10 +1,16 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import TimelineCard from "../components/TimelineCard/TimelineCard";
 import { Timelinecontext } from "../context/TimelineContext";
 
 const Timeline = () => {
   const { timelines } = useContext(Timelinecontext);
+  const [filter, setFilter] = useState("All");
+  const filteredTimelines =
+    filter === "All"
+      ? timelines
+      : timelines.filter((item) => item.call === filter);
+
   return (
     <section className="w-full bg-[#f6f7f9] px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
       {/* Container */}
@@ -19,12 +25,14 @@ const Timeline = () => {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start">
             {/* Filter */}
             <div className="w-full sm:w-64">
-              <select className="w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm text-slate-500 outline-none transition focus:border-[#245b4b] focus:ring-2 focus:ring-[#245b4b]/10">
-                <option>Filter timeline</option>
-                <option>All</option>
-                <option>Call</option>
-                <option>Text</option>
-                <option>Video</option>
+              <select
+                onChange={(e) => setFilter(e.target.value)}
+                className="w-full rounded-md border border-gray-200 bg-white px-4 py-3 text-sm text-slate-500 outline-none"
+              >
+                <option value="All">Filter timeline</option>
+                <option value="Call">Call</option>
+                <option value="Text">Text</option>
+                <option value="Video">Video</option>
               </select>
             </div>
 
@@ -41,7 +49,7 @@ const Timeline = () => {
 
         {/* Timeline Cards */}
         <div className="space-y-3">
-          {timelines.map((timeline, indx) => (
+          {filteredTimelines.map((timeline, indx) => (
             <TimelineCard key={indx} timeline={timeline} />
           ))}
         </div>
