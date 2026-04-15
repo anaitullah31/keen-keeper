@@ -3,6 +3,11 @@ import Link from "next/link";
 
 const FriendCard = ({ friend }) => {
   const { id, name, picture, status, tags, days_since_contact } = friend;
+  const statusStyles = {
+    overdue: "bg-red-100 text-red-700",
+    "almost due": "bg-amber-100 text-amber-700",
+    "on-track": "bg-green-100 text-green-700",
+  };
   return (
     <Link href={`/friends/${id}`}>
       <div className="cursor-pointer rounded-xl border border-gray-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md">
@@ -22,7 +27,11 @@ const FriendCard = ({ friend }) => {
 
         {/* Days */}
         <p className="mt-1 text-sm text-slate-500">{days_since_contact}d ago</p>
-
+        <p
+          className={`py-1 w-fit rounded-full mx-auto px-3 mt-2 text-xs font-medium ${statusStyles[status]}`}
+        >
+          {status}
+        </p>
         {/* Tags */}
         <div className="mt-4 flex flex-wrap justify-center gap-2">
           {tags?.map((tag, index) => (

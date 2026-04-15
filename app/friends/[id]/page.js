@@ -20,14 +20,21 @@ const FriendsDetails = async ({ params }) => {
   const friendsDetails = data.find((friend) => friend.id === Number(id));
   const {
     name,
+    status,
     picture,
     days_since_contact,
     goal,
     next_due_date,
     tags,
     bio,
-    preferred = "email",
+    email,
   } = friendsDetails;
+
+  const statusStyles = {
+    overdue: "bg-red-100 text-red-700",
+    "almost due": "bg-amber-100 text-amber-700",
+    "on-track": "bg-green-100 text-green-700",
+  };
 
   return (
     <section className="bg-[#f6f7f9] px-4 py-8 sm:px-6 lg:px-8">
@@ -48,6 +55,12 @@ const FriendsDetails = async ({ params }) => {
 
               <h1 className="mt-4 text-2xl font-bold text-slate-800">{name}</h1>
 
+              <p
+                className={`py-1 w-fit rounded-full mx-auto px-3 mt-2 text-xs font-medium ${statusStyles[status]}`}
+              >
+                {status}
+              </p>
+
               <div className="mt-3 flex flex-wrap justify-center gap-2">
                 {tags?.map((tag, index) => (
                   <span
@@ -67,7 +80,7 @@ const FriendsDetails = async ({ params }) => {
               </p>
 
               <p className="mt-3 text-xs text-slate-400">
-                Preferred: <span className="capitalize">{preferred}</span>
+                <span className="capitalize">{email}</span>
               </p>
             </div>
 
